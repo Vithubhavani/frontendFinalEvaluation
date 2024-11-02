@@ -215,7 +215,7 @@ const handleCollapseToggle = (section) => {
 
     {isCreatingTask && (
             <TaskcreatePage onClose={()=>setIscreatingTask(false)}
-            onSave={handleTaskcreationClose} initialTask={currentTask}/>
+            onSave={handleTaskcreationClose} />
             
           )}
     {isDeleteModalVisible &&(

@@ -6,13 +6,13 @@ import { getAssignee, createTask,updateTask } from '../services/task'; // Add th
 import Delete from '../assets/Delete.png'
 import {format} from 'date-fns'
 
-const TaskCreationComponent = ({initialTask = null, onClose, onSave }) => {
-  const [title, setTitle] = useState(initialTask?.title || '');
-  const [priority, setPriority] = useState(initialTask?.priority ||'Lowpriority');
-  const [assignee, setAssignee] = useState(initialTask?.assignee ||'');
+const TaskCreationComponent = ({ onClose, onSave }) => {
+  const [title, setTitle] = useState('');
+  const [priority, setPriority] = useState('Lowpriority');
+  const [assignee, setAssignee] = useState('');
   const [checklist, setChecklist] = useState([]);
   const [newChecklistItem, setNewChecklistItem] = useState('');
-  const [dueDate, setDueDate] = useState(initialTask ? new Date(initialTask.dueDate) :null);
+  const [dueDate, setDueDate] = useState(null);
   const [assignees, setAssignees] = useState([]);
 
 
@@ -21,31 +21,7 @@ const TaskCreationComponent = ({initialTask = null, onClose, onSave }) => {
   const [checklistError, setChecklistError] = useState('');
 
 
-  useEffect(() => {
-    if (initialTask) {
-      setTitle(initialTask.title);
-      setPriority(initialTask.priority);
-      setAssignee(initialTask.assignee);
-      setChecklist(
-        Array.isArray(initialTask.checklist)
-          ? initialTask.checklist.map((item) => ({ text: item, checked: false }))
-          : []
-      );
-      const taskDueDate = new Date(initialTask.dueDate);
-
-      setDueDate(isNaN(taskDueDate) ? null : taskDueDate);
-    } else {
-      // Reset fields if there's no initialTask
-      setTitle('');
-      setPriority('low');
-      setAssignee('');
-      setChecklist([]);
-      setDueDate(null);
-    }
-  }, [initialTask]);
-
-
-
+ 
 
   useEffect(() => {
     async function fetchAssignees() {
@@ -56,12 +32,10 @@ const TaskCreationComponent = ({initialTask = null, onClose, onSave }) => {
   }, []);
 
   const handleAddChecklistItem = () => {
-    if (newChecklistItem.trim()) {
+  
       setChecklist([...checklist, { text: newChecklistItem, checked: false }]);
       setNewChecklistItem('');
-    } else {
-      setChecklistError('Checklist item cannot be empty.');
-    }
+   
   };
 
   const handleChecklistToggle = (index) => {
@@ -103,23 +77,17 @@ const TaskCreationComponent = ({initialTask = null, onClose, onSave }) => {
       priority,
       assignee,
       checklist: checklist.map(item => item.text),
-      dueDate:  null,
+      dueDate: dueDate ? dueDate.toISOString() : null,
     };
 
-    try {
-      if (initialTask) {
-        await updateTask(initialTask._id, newTask);
-       alert('Task updated successfully!');
-      } else {
+    
         await createTask(newTask);
-        alert('Task created successfully!');
-      }
-      onSave(newTask);
+       
+      onSave();
+      alert('Task created successfully!');
+    
       onClose();
-    } catch (error) {
-      alert('An error occurred while saving the task.');
-    }
- 
+    
 
   };
 
@@ -240,24 +208,17 @@ const TaskCreationComponent = ({initialTask = null, onClose, onSave }) => {
         <h4>Due Date</h4>
         <div  >
         <DatePicker
-          selected={dueDate}
-          onChange={(date) => {
-            if (date && !isNaN(date.getTime())) {
-              setDueDate(date); // Only set valid dates
-            } else {
-              setDueDate(null); // Handle invalid date input by setting null
-            }
-          }}
-          dateFormat="yyyy-MM-dd"
-          minDate={new Date()}
-          className={styles.duedate}
+            selected={dueDate}
+            onChange={(date) => setDueDate(date)}
+            dateFormat="yyyy-MM-dd"
+            className={styles.duedate}
        
         />
         </div>
       </div>
 
       <div className={styles.savecan}>
-        <button onClick={handleSave} className={styles.save}>  {initialTask ? 'Update' : 'Save'}</button>
+        <button onClick={handleSave} className={styles.save}>  Save</button>
         <button onClick={onClose} className={styles.cancel}>Cancel</button>
       </div>
     </div>
