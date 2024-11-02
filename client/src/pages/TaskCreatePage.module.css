@@ -1,0 +1,135 @@
+.tasktitle1{
+    font-size: 16px;
+    font-weight: 500;
+}
+.tasktitle1 span{
+    color: red;
+}
+
+.name{
+    width: 500px;
+    height: 40px;
+    border: 1px solid gray;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.hdot{
+    color: red;
+    font-size: 30px;
+    font-weight: 800;
+ 
+    border-radius: 30px;
+}
+
+.high{
+    width: 130px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid gray;
+   font-size: 16px;
+   font-weight: 500;
+   color: #767575;
+   font-family: "Poppins", serif;
+   margin-left: 5px;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.assign{
+    width: 500px;
+    height: 40px;
+    border: 1px solid gray;
+    color: #767575;
+}
+
+.ASS{
+    display: flex;
+}
+
+.ASS p{
+    font-size: 16px;
+    font-family: "Inter", serif;
+   width: 70px;
+}
+
+.prioBut{
+    display: flex;
+}
+
+
+
+.header{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Inter", serif ;
+}
+
+.itemscheck{
+ 
+    border: 1px solid gray;
+   height: 30px;
+}
+
+.item{
+    width: 500px;
+    height: 30px;  
+    border: 1px solid gray;
+  font-size: 16px;
+  font-family:  "Inter", serif;
+  font-weight:bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+.items{
+     
+}
+
+.delete{
+ margin-left: 270px;
+}
+
+.duedate{
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.save{
+    width: 160px;
+    height: 40px; 
+    border-radius: 10px; 
+  background-color: #17A2B8;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel{
+    width: 160px;
+    height: 40px;  
+    border-radius: 10px;  
+    border: 1px solid red;
+    background-color: white;
+    color: red;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.savecan{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}

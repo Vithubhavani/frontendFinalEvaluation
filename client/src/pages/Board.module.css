@@ -1,0 +1,30 @@
+.board{
+    margin: 0;
+    padding: 0;
+    display: flex;
+   gap:40px
+}
+
+
+.right{
+    display: flex;
+    flex-direction: column;
+}
+.nav{
+
+}
+.parts{
+    display: flex;
+    gap: 30px;
+}
+.part{
+    width: 300px;
+    height: 100vh;
+ 
+    background-color: #EEF2F5;
+}
+
+.collapse{
+    display: flex;
+    gap: 30px;
+}

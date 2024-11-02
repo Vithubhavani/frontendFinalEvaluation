@@ -1,0 +1,119 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 200px;
+    gap: 27px;
+}
+
+.name{
+    width: 400px;
+    padding: 10px;
+    padding-left: 60px; /* Leave space for the icon on the left */
+    font-size: 16px;
+ border-radius: 5px;
+ border: 1px solid gray;
+   
+}
+.inputContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  
+}
+.icon{
+    position: absolute;
+    left: 10px; /* Adjust to place icon inside the input field */
+    width: 30px;  /* Adjust the icon size */
+    height: 30px;
+}
+
+.in1Container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    flex-direction: column;
+}
+
+.in2Container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column; 
+}
+
+.in3Container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    flex-direction: column;
+}
+
+.email{
+    width: 400px;
+    padding: 10px;
+    padding-left: 60px; /* Leave space for the icon on the left */
+    font-size: 16px;
+ border-radius: 5px;
+ border: 1px solid gray;
+}
+
+.pass{
+    width: 400px;
+    padding: 10px;
+    padding-left: 60px; /* Leave space for the icon on the left */
+    font-size: 16px;
+ border-radius: 5px;
+ border: 1px solid gray;
+}
+
+.conpass{
+    width: 400px;
+    padding: 10px;
+    padding-left: 60px; /* Leave space for the icon on the left */
+    font-size: 16px;
+ border-radius: 5px;
+ border: 1px solid gray;
+}
+
+.register{
+    background-color:  #17A2B8;
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.log{
+ 
+    text-decoration: none;
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    color: #17A2B8;
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #17A2B8;
+    background-color: white;
+}
+
+.q{
+    color: gray;
+}
+.head{
+    font-weight: 600;
+    font-size: 30px;
+}
+

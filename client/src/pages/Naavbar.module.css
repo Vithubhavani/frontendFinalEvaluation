@@ -1,0 +1,38 @@
+.greet{
+    font-weight: 800;
+    font-size: 30px;
+}
+.date{
+    font-size: 20px;
+    color: #707070;
+    font-weight: 500;
+    font-family:  "Poppins", sans-serif; 
+    margin-left: 1000px;
+}
+
+.peopleandopt{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.option{
+    margin-left: 800px;
+   
+}
+
+.addp{
+    color: gray;
+}
+
+.head{
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}

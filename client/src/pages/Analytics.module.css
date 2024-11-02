@@ -1,0 +1,39 @@
+.analytic{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.Analytics{
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    margin-left: 200px;
+}
+p{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.twoparts{
+    display: flex;
+margin-top: 50px;
+
+}
+
+li{
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-weight: 400;
+  
+}
+
+
+.part1{
+    background-color: #F9FCFF;
+    font-size: 10px;
+    margin-left: 100px;
+ 
+}

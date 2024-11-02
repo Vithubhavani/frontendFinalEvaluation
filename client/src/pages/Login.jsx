@@ -1,16 +1,17 @@
-import { useState,useEffect } from "react"
+import { useState } from "react"
 import styles from './Login.module.css'
 import LoginForm from '../Form/LoginForm'
 import ValidateLogin from "../Validate/ValidateLogin"
 import { useNavigate } from "react-router-dom"
 import { login } from "../services/services"
+import left from '../assets/left.png'
 
 export default function Login() {
   const navigate=useNavigate()
 
   const token = localStorage.getItem("token");
   if (token) {
-      navigate("/");
+      navigate("/board");
   }
   
   const[email,setEmail]=useState('')
@@ -41,7 +42,7 @@ return
       alert("Logged in successfully")
       const token = res.data.token;
       localStorage.setItem("token", token);
-      navigate('/')
+      navigate('/board')
 
     }
     else{
@@ -51,20 +52,17 @@ return
   }
   catch(e){
      if (e.response.status === 400) {
-                    alert("Invalid email or password");
-                }
-
+          alert("Invalid email or password");
+            }
   }
-
   }
-
-
-  
 
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-
+      <img src={left} className={styles.img}/>
+      <p className={styles.p1}>Welcome aboard my friend </p>
+      <p>just a couple of clicks and we start</p>
       </div>
 
       <div className={styles.right}>
@@ -79,8 +77,7 @@ return
      submitHandle={submitHandle}
      />
       </div>
-
-      
+  
     </div>
   )
 }

@@ -4,6 +4,8 @@ import Form from "../Form/Form"
 import ValidateForm from "../Validate/ValidateForm"
 import { useNavigate } from "react-router-dom"
 import { register } from "../services/services"
+import left from '../assets/left.png'
+import {Link} from 'react' 
 
 export default function RegisterPage() {
   const[name,setName]=useState('')
@@ -34,7 +36,7 @@ return
     if(res.status===201){
       console.log('Registration successful:', res.data);
       alert("Registration successful")
-      navigate('/login')
+      navigate('/')
 
     }
 
@@ -53,7 +55,12 @@ return
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-
+        <div className={styles.back}>
+  <img src={left} className={styles.img}/>
+  </div>
+  <p className={styles.p1}>Welcome aboard my friend </p>
+  <p>just a couple of clicks and we start</p>
+    
       </div>
 
       <div className={styles.right}>
@@ -71,6 +78,9 @@ return
      submitHandle={submitHandle}
      />
       </div>
+      
+      
+
 
       
     </div>
