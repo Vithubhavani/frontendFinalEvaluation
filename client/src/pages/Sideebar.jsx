@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css"
-import logouticon from "../assets/logout.png"
+import Logout from '../assets/Logout.png'
 import codesandbox from "../assets/codesandbox.png"
 import database from "../assets/database.png"
 import layout from "../assets/layout.png"
@@ -57,7 +57,7 @@ export default function Sideebar() {
                 <button onClick={settings} className={styles.btn}>Settings</button>
                 </div>
                <div className={styles.board2}>
-                <img src={logouticon} alt="" />
+                <img src={Logout} alt="" />
                 <button onClick={handleLogoutClick} className={styles.btn1}>Logout</button>
                 </div> 
             </> : <p>Not logged in</p>}
